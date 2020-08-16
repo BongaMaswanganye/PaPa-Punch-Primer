@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Test Art Folder/end-game-button-i-made-in-16-seconds.PNG" type="Texture" id=1]
+[ext_resource path="res://Test Art Folder/title-screen-i-made-in-10-seconds.PNG" type="Texture" id=2]
+[ext_resource path="res://Buttons.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/PracticeButton.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/EndGameButton.gd" type="Script" id=5]
+
+[node name="MainMenu" type="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_left = 37.0
+margin_top = 53.0
+margin_right = 1213.0
+margin_bottom = 613.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="TextureRect" parent="Menu"]
+margin_right = 1176.0
+margin_bottom = 93.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="Center" type="HBoxContainer" parent="Menu"]
+margin_top = 97.0
+margin_right = 1176.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+
+[node name="Options" type="VBoxContainer" parent="Menu/Center"]
+margin_right = 1176.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Practice" parent="Menu/Center/Options" instance=ExtResource( 3 )]
+script = ExtResource( 4 )
+
+[node name="endgame" parent="Menu/Center/Options" instance=ExtResource( 3 )]
+margin_top = 98.0
+margin_right = 312.0
+margin_bottom = 189.0
+icon = ExtResource( 1 )
+script = ExtResource( 5 )
+[connection signal="pressed" from="Menu/Center/Options/Practice" to="Menu/Center/Options/Practice" method="_on_Practice_pressed"]
+[connection signal="pressed" from="Menu/Center/Options/endgame" to="Menu/Center/Options/endgame" method="_on_endgame_pressed"]

@@ -15,7 +15,6 @@ current = true
 smoothing_enabled = true
 smoothing_speed = 1.0
 script = ExtResource( 3 )
-zoom_offset = 0.2
 debug_mode = true
 
 [node name="Player" parent="Camera2D" instance=ExtResource( 1 )]
