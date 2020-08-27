@@ -9,3 +9,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 icon = ExtResource( 1 )
 flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

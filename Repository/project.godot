@@ -12,12 +12,12 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "Player_1",
 "language": "GDScript",
-"path": "res://Player.gd"
+"path": "res://Scripts/Player.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player_2",
 "language": "GDScript",
-"path": "res://Player_2.gd"
+"path": "res://Scripts/Player_2.gd"
 } ]
 _global_script_class_icons={
 "Player_1": "",
@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Repository"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [input]

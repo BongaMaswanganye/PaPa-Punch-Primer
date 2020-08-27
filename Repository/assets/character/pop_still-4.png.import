@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pop_still-4.png-1eddd63aa252dd582b471849695d5073.stex"
+path="res://.import/pop_still-4.png-c9a0feccfc258b5fb96faca71ee66d3b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character/pop_still-4.png"
-dest_files=[ "res://.import/pop_still-4.png-1eddd63aa252dd582b471849695d5073.stex" ]
+source_file="res://assets/character/pop_still-4.png"
+dest_files=[ "res://.import/pop_still-4.png-c9a0feccfc258b5fb96faca71ee66d3b.stex" ]
 
 [params]
 
