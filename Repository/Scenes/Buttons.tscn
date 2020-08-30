@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Test Art Folder/practice-button-i-made-in-12-seconds.PNG" type="Texture" id=1]
+
+[node name="Practice" type="Button"]
+margin_right = 268.0
+margin_bottom = 94.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

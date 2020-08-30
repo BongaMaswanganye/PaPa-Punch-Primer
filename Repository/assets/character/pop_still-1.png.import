@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/charidle_clear1-10002.png-4e9afe0f0af1d16ebcb46551215551d3.stex"
+path="res://.import/pop_still-1.png-494c20bdd8866462037c1f142587a2eb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://charidle_clear1-10002.png"
-dest_files=[ "res://.import/charidle_clear1-10002.png-4e9afe0f0af1d16ebcb46551215551d3.stex" ]
+source_file="res://assets/character/pop_still-1.png"
+dest_files=[ "res://.import/pop_still-1.png-494c20bdd8866462037c1f142587a2eb.stex" ]
 
 [params]
 
