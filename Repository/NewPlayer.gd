@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-
+export var Health = 100
 export var run_speed = 300
 export var jump_speed = -1100
 export var gravity = 2500
