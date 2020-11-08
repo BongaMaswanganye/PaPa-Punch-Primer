@@ -27,7 +27,10 @@ __meta__ = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.88776, 5.66327 )
+rotation = 4.71239
+scale = Vector2( 2.65, 0.38 )
 shape = SubResource( 1 )
+one_way_collision = true
 __meta__ = {
 "_edit_group_": true
 }

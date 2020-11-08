@@ -11,7 +11,7 @@ func _ready() -> void:
 	set_process((get_child_count()) > 0)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	camera_rect = Rect2(get_child(0).global_position, Vector2())
 	for index in get_child_count():
 		if index == 0:
