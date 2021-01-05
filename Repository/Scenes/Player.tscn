@@ -86,6 +86,7 @@ scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 1 )
 vframes = 2
 hframes = 4
+frame = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
