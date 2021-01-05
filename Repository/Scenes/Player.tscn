@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 77.342, 199.644 )
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=2]
 resource_name = "Idle"
 length = 2.0
 loop = true
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=3]
 resource_name = "Walk"
 length = 2.0
 loop = true
@@ -40,25 +40,25 @@ tracks/0/keys = {
 "values": [ 4, 5, 6, 7 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=4]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=20]
+[sub_resource type="AnimationNodeStateMachineTransition" id=6]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=21]
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
 
-[sub_resource type="AnimationNodeStateMachine" id=15]
-states/Idle/node = SubResource( 18 )
+[sub_resource type="AnimationNodeStateMachine" id=8]
+states/Idle/node = SubResource( 4 )
 states/Idle/position = Vector2( 197, 39.8889 )
-states/Walk/node = SubResource( 19 )
+states/Walk/node = SubResource( 5 )
 states/Walk/position = Vector2( 383.667, 40.3333 )
-transitions = [ "Idle", "Walk", SubResource( 20 ), "Walk", "Idle", SubResource( 21 ) ]
+transitions = [ "Idle", "Walk", SubResource( 6 ), "Walk", "Idle", SubResource( 7 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=9]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 74.0875, 332.628 )
@@ -89,12 +89,12 @@ hframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Sprite")
-anims/Idle = SubResource( 14 )
-anims/Walk = SubResource( 17 )
+anims/Idle = SubResource( 2 )
+anims/Walk = SubResource( 3 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 15 )
+tree_root = SubResource( 8 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/playback = SubResource( 16 )
+parameters/playback = SubResource( 9 )
 [connection signal="tree_entered" from="CollisionShape2D" to="." method="_on_CollisionShape2D_tree_entered"]
