@@ -10,7 +10,7 @@ export var gravity = 2500
 var velocity = Vector2()
 var jumping = false
 var state_machine
-onready var ANI = get_node("AnimatedSprite")
+
 
 signal damaged
 signal newHealth
@@ -22,18 +22,24 @@ func _ready():
 	
 
 func get_input():
+	var current_anim = state_machine.get_current_node()
+	
 	velocity.x = 0
 	
 	var right = Input.is_action_pressed("p1_right")
 	var left = Input.is_action_pressed("p1_left")
 	var jump = Input.is_action_just_pressed("p1_jump")
-#	var attack_1 = Input.is_action_just_pressed("p1_attack")
-	
-	var current_anim = state_machine.get_current_node()
-	
-	
+	var attack_1 = Input.is_action_just_pressed("p1_attack")
+
+
 	if Input.is_action_just_pressed("damaged"):
 		damaged()
+		
+	if attack_1:
+		print("Attack 1")
+		state_machine.travel("Attack1")
+		# REMEMBER TO PUT RETURN IN THINGS THAT DO NOT AUTOMATICALLY TERMINATE
+		return
 	
 	if jump and is_on_floor():
 		jumping = true
@@ -42,16 +48,15 @@ func get_input():
 		velocity.x += run_speed
 	if left:
 		velocity.x -= run_speed
-
-
-#	if attack_1:
-#		$AnimatedSprite.play("Attack-1")
-	
-	if velocity.length()  == 0:
+		
+	if velocity.length() == 0:
 		state_machine.travel("Idle")
 		
 	if velocity.length() > 0:
 		state_machine.travel("Walk")
+
+# make a separate code block/function to deal with state machine travel
+
 	
 
 func damaged():
@@ -61,7 +66,7 @@ func damaged():
 		print("Health: ", Health)
 		print("maxHealth: ", maxHealth)
 		emit_signal("damaged", Health)
-
+		
 
 func _physics_process(delta):
 	get_input()
@@ -70,21 +75,11 @@ func _physics_process(delta):
 	if jumping and is_on_floor():
 		jumping = false
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-# Called when the node enters the scene tree for the first time.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-
-#func _on_AnimatedSprite_animation_finished():
-#	$AnimatedSprite.play("Idle")
-
-func walking():
-	state_machine.travel("Walk")
-	
 
 func initialize():
 	Health = maxHealth
 	emit_signal("newHealth", Health)
 	emit_signal("newMaxHP", maxHealth)
+	
 
